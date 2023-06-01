@@ -1,7 +1,6 @@
 import React from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 const ServiceCard = ({data}) => {
-    console.log(data)
     const {img, price,description, title, _id} = data;
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl border-2 border-[#E8E8E8] ">
