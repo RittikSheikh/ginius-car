@@ -49,7 +49,7 @@ const carouselItems = [
 ];
 
     return (
-        <div className="carousel md:max-w-screen-xl md:h-[750px] mx-auto rounded-xl mt-12 mb-32 ">
+        <div className="carousel  md:h-[800px] mx-auto rounded-xl mt-12 mb-32 ">
             {
                 carouselItems.map(item => <CarouselItem key={item.id} data={item}></CarouselItem>)
             }
