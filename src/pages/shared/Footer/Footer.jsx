@@ -4,7 +4,7 @@ import { AiFillGoogleCircle, AiFillInstagram, AiFillLinkedin, AiFillTwitterCircl
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 md:p-[140px] bg-warning text-white">
+        <footer className="footer p-10 md:p-[140px] bg-black text-white">
             <div>
                 <img src={logo} alt="" />
                 <p className="w-[283px]">Edwin Diaz is a software and web technologies engineer, a life coach trainer who is also a serial .</p>
