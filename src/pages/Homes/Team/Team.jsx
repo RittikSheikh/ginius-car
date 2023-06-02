@@ -12,7 +12,7 @@ const Team = () => {
             <div className="service-text text-center mb-12">
                 <h3 className="font-bold text-xl text-secondary">Team</h3>
                 <h2 className="font-bold text-5xl my-5">Meet Our Team</h2>
-                <p className="md:w-[717px] mx-auto">the majority have suffered alteration in some form, by injected humour, or randomised words which {`don't`} look even slightly believable. </p>
+                <p className="md:w-[717px] mx-auto capitalize">the majority have suffered alteration in some form, by injected humour, or randomised words which {`don't`} look even slightly believable. </p>
             </div>
 
             <Carousel cols={3} rows={1} gap={10} loop>
