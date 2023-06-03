@@ -15,7 +15,7 @@ const Login = () => {
                         <label htmlFor="email" className='font-semibold text-lg'>Email</label> <br />
                         <input className='border w-full p-5 rounded-lg my-5 ' type="email" name="email" id="" placeholder='Your email' /> <br />
                         <label htmlFor="password" className='font-semibold text-lg'>Confirm Password</label> <br />
-                        <input className='my-5 border w-full p-5 rounded-lg' type="email" name="password" id="" placeholder='Your password' /> <br />
+                        <input className='my-5 border w-full p-5 rounded-lg' type="password" name="password" id="" placeholder='Your password' /> <br />
                         <input type="submit" className='btn btn-secondary font-semibold text-xl w-full h-16 capitalize mb-7 text-white' value="Sign in" />
                     </form>
                     <p className="font-medium text-lg text-center">Or Sign In with</p>
