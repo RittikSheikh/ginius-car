@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
     return (
-        <div className='grid grid-cols-1 gap-16 md:grid-cols-2 mt-14'>
+        <div className='grid grid-cols-1 gap-16 md:grid-cols-2 my-14'>
             <div className='flex justify-center'>
                 <img className='w-2/4' src={login} alt="" />
             </div>
