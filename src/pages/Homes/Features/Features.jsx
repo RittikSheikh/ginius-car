@@ -50,7 +50,7 @@ const Features = () => {
                 <h2 className="font-bold text-5xl my-5">Why Choose Us</h2>
                 <p className="md:w-[717px] mx-auto capitalize">the majority have suffered alteration in some form, by injected humour, or randomised words which {`don't`} look even slightly believable. </p>
             </div>
-            <div className="freatures-cards flex justify-evenly">
+            <div className="freatures-cards flex flex-wrap gap-4 justify-center md:justify-evenly">
                 {
                     featuresCards.map(card => <FeautesCards key={card.id} data={card}></FeautesCards>)
                 }
