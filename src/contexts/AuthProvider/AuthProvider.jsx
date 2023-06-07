@@ -36,8 +36,6 @@ const AuthProvider = ({children}) => {
 
 
 
-    console.log(user);
-
 
     useEffect(() =>{
         const unsubScribe = onAuthStateChanged(auth, createUser =>{
