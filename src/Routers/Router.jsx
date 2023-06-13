@@ -5,6 +5,7 @@ import Home from "../pages/Homes/Home/Home";
 import LoginAndRegister from "../layouts/LoginAndRegister";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Chekout from "../pages/Chekout/Chekout";
 
 const router = createBrowserRouter([
     {
@@ -20,19 +21,25 @@ const router = createBrowserRouter([
                 path: '/home',
                 element: <Home></Home>
             },
+            {
+                path: '/chekout/:id',
+                element: <Chekout></Chekout>,
+                loader: ({params}) => fetch(`http://localhost:5000/chekout/${params.id}`)
+            }
 
         ]
     },
     {
-        path: '/',
+        path: '/login',
         element: <LoginAndRegister></LoginAndRegister>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/login',
                 element: <Login></Login>
             },
             {
-                path: '/register',
+                path: '/login/register',
                 element: <Register></Register>
             }
         ]

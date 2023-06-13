@@ -52,7 +52,7 @@ const Login = () => {
                     <FaLinkedinIn className="w-14 h-12 text-[#0A66C2] bg-[#F5F5F8] mr-4 rounded-full p-3"></FaLinkedinIn>
                     <FcGoogle onClick={handleGoogleLogIn} className="w-14 h-12 hover:cursor-pointer bg-[#F5F5F8] mr-4 rounded-full p-3"></FcGoogle>
                     </div>
-                    <p className="text-center">{`Don't`} Have an account? <span className="text-secondary font-bold"><Link to='/register'>Sign UP</Link></span></p>
+                    <p className="text-center">{`Don't`} Have an account? <span className="text-secondary font-bold"><Link to='/login/register'>Sign UP</Link></span></p>
             </div>
         </div>
     );

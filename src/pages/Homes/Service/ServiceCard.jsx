@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 const ServiceCard = ({data}) => {
     const {img, price,description, title, _id} = data;
     return (
@@ -9,7 +10,7 @@ const ServiceCard = ({data}) => {
                 <h2 className="card-title font-bold text-2xl">{title}</h2>
                 <div className='flex justify-between'>
                 <p className='text-secondary font-semibold text-xl'>Price: ${price}</p>
-                <AiOutlineArrowRight className='text-2xl text-secondary'></AiOutlineArrowRight>
+                <Link to={`/chekout/${_id}`}><AiOutlineArrowRight className='text-2xl text-secondary'></AiOutlineArrowRight></Link>
                 </div>
             </div>
         </div>
