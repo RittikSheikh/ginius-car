@@ -2,9 +2,18 @@ import logo from "../../../assets/logo/logo.svg";
 import { Link } from 'react-router-dom';
 import { BsHandbag, } from 'react-icons/bs';
 import { HiOutlineSearch } from 'react-icons/hi';
+import { useContext } from "react";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
 
+    const {user, userLogOut} = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        userLogOut()
+        .then(() => console.log('user log out'))
+        .catch(err => console.log(err))
+    }
 
     const navMenus = <>
         <li><Link to='/'>Home</Link></li>
@@ -12,6 +21,9 @@ const Header = () => {
         <li><Link to='/'>Services</Link></li>
         <li><Link to='/'>Blog</Link></li>
         <li><Link to='/'>Contact</Link></li>
+        {
+            user && user.uid ? <li onClick={handleLogOut}><Link>logout</Link></li> : <li><Link to='/login'>login</Link></li> 
+        }
     </>
 
 

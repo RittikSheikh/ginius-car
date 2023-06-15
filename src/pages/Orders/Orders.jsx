@@ -10,7 +10,6 @@ const Orders = () => {
 
     const { user } = useContext(AuthContext);
     const userEmail = user?.email;
-console.log(user)
     useEffect(() => {
         fetch(`http://localhost:5000/orders?email=${userEmail}`)
             .then(res => res.json())

@@ -2,14 +2,16 @@ import login from "../../assets/images/login/login.svg";
 import { GrFacebookOption } from 'react-icons/gr';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
 
     const {loginUser, loginWithGoogle} = useContext(AuthContext);
-
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    const navigate = useNavigate();
 
 
     const handleLogin = e => {
@@ -20,6 +22,7 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user)
+            navigate(from, {replace: true})
         }).catch(err => console.error(err))
         e.target.reset();
     }
@@ -29,6 +32,7 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log('google log in user', user)
+            navigate(from, {replace: true})
         }).catch(err => console.error(err))
     }
 
