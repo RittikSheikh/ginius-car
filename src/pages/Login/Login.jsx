@@ -5,10 +5,11 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
 
-    const {loginUser, loginWithGoogle} = useContext(AuthContext);
+    const {loginUser, loginWithGoogle, loginWithFacebook} = useContext(AuthContext);
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     const navigate = useNavigate();
@@ -22,6 +23,7 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user)
+            toast.success('Login Success')
             navigate(from, {replace: true})
         }).catch(err => console.error(err))
         e.target.reset();
@@ -32,6 +34,17 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log('google log in user', user)
+            toast.success('Login Success')
+            navigate(from, {replace: true})
+        }).catch(err => console.error(err))
+    }
+
+    const handleFacebookLogIn = () => {
+        loginWithFacebook()
+        .then(result => {
+            const user = result.user;
+            console.log('facebook log in user', user)
+            toast.success('Login Success')
             navigate(from, {replace: true})
         }).catch(err => console.error(err))
     }
@@ -52,8 +65,8 @@ const Login = () => {
                     </form>
                     <p className="font-medium text-lg text-center">Or Sign In with</p>
                     <div className="flex w-48 mx-auto mt-10 mb-16">
-                    <GrFacebookOption className="w-14 h-12 text-[#3B5998] bg-[#F5F5F8] mr-4 rounded-full p-3"></GrFacebookOption>
-                    <FaLinkedinIn className="w-14 h-12 text-[#0A66C2] bg-[#F5F5F8] mr-4 rounded-full p-3"></FaLinkedinIn>
+                    <GrFacebookOption onClick={handleFacebookLogIn} className="w-14 h-12 text-[#3B5998] bg-[#F5F5F8] mr-4 hover:cursor-pointer rounded-full p-3"></GrFacebookOption>
+                    <FaLinkedinIn className="w-14 h-12 hover:cursor-pointer text-[#0A66C2] bg-[#F5F5F8] mr-4 rounded-full p-3"></FaLinkedinIn>
                     <FcGoogle onClick={handleGoogleLogIn} className="w-14 h-12 hover:cursor-pointer bg-[#F5F5F8] mr-4 rounded-full p-3"></FcGoogle>
                     </div>
                     <p className="text-center">{`Don't`} Have an account? <span className="text-secondary font-bold"><Link to='/login/register'>Sign UP</Link></span></p>

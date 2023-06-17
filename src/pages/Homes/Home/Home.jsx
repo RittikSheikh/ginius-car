@@ -13,7 +13,9 @@ const Home = () => {
         <div>
             <Carousel></Carousel>
             <AboutUs></AboutUs>
+            <div id="service">
             <Service></Service>
+            </div>
             <BasicInfo></BasicInfo>
             <Products></Products>
             <Team></Team>

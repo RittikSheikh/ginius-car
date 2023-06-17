@@ -4,6 +4,7 @@ import { BsHandbag, } from 'react-icons/bs';
 import { HiOutlineSearch } from 'react-icons/hi';
 import { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Header = () => {
 
@@ -11,14 +12,29 @@ const Header = () => {
 
     const handleLogOut = () => {
         userLogOut()
-        .then(() => console.log('user log out'))
+        .then(() => {
+            toast.success('Logged Out',
+            {
+                style: {
+                    border: '1px solid #FFCC00',
+                    padding: '10px',
+                    color: '#FFCC00',
+                  },
+                  iconTheme: {
+                    primary: '#FFCC00',
+                    secondary: '#f25711',
+                  }
+            }
+            )
+               console.log('user log out')
+        })
         .catch(err => console.log(err))
     }
 
     const navMenus = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/'>About</Link></li>
-        <li><Link to='/'>Services</Link></li>
+        <li><Link to=''>About</Link></li>
+        <li><Link to=''>Services</Link></li>
         <li><Link to='/'>Blog</Link></li>
         <li><Link to='/'>Contact</Link></li>
         {

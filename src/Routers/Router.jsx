@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import Chekout from "../pages/Chekout/Chekout";
 import Orders from "../pages/Orders/Orders";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
+import Service from "../pages/Homes/Service/Service";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
             {
                 path: '/orders',
                 element: <PrivateRoutes><Orders></Orders></PrivateRoutes>
-            }
+            },
 
         ]
     },

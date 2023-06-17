@@ -67,7 +67,7 @@ console.log(orders)
                         <p className="font-semibold text-xl mx-8 md:mx-[103px]">{order.customer.email}</p>
                         <p className="font-semibold text-xl ml-8 md:ml-[103px]">20/02/24</p>
                         <select className="font-semibold text-xl ml-8 md:ml-[100px] select select-success md:w-[160px] text-success">
-                            <option disabled selected>Approved</option>
+                            <option disabled value='Approved'>Approved</option>
                         </select>
                     </div>)
                 }
