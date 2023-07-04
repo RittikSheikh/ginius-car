@@ -38,6 +38,9 @@ const Header = () => {
         <li><Link to='/'>Blog</Link></li>
         <li><Link to='/'>Contact</Link></li>
         {
+            user && user.uid ? <li><Link to='/orders'>Orders</Link></li> : undefined
+        }
+        {
             user && user.uid ? <li onClick={handleLogOut}><Link>logout</Link></li> : <li><Link to='/login'>login</Link></li> 
         }
     </>

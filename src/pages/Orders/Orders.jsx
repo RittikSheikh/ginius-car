@@ -13,12 +13,17 @@ const Orders = () => {
     useEffect(() => {
         fetch(`http://localhost:5000/orders?email=${userEmail}`)
             .then(res => res.json())
-            .then(data => setOrders(data))
+            .then(data => {
+                console.log(data)
+                setOrders(data)
+            })
             .catch(err => console.log(err))
     }, [userEmail])
 
     const handleDeleteOrder = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        const confirm = window.confirm("you sure want ot delete !");
+        if (confirm) {
+            fetch(`http://localhost:5000/orders/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -34,7 +39,10 @@ const Orders = () => {
             })
             .catch(err => console.log(err))
     }
+        }
+        
 console.log(orders)
+
     return (
         <div>
             <div className="relative mb-32">
@@ -66,7 +74,7 @@ console.log(orders)
                         </div>
                         <p className="font-semibold text-xl mx-8 md:mx-[103px]">{order.customer.email}</p>
                         <p className="font-semibold text-xl ml-8 md:ml-[103px]">20/02/24</p>
-                        <select className="font-semibold text-xl ml-8 md:ml-[100px] select select-success md:w-[160px] text-success">
+                        <select defaultValue={"Approved"} className="font-semibold text-xl ml-8 md:ml-[100px] select select-success md:w-[160px] text-success">
                             <option disabled value='Approved'>Approved</option>
                         </select>
                     </div>)
